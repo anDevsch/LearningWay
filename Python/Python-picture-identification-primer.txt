@@ -1,0 +1,17 @@
+1，安装python
+2，安装pip :在python Scripts目录下输入easy_install.exe pip(将Script下pip.exe添加到环境变量中)
+3，安装基于PIL的Pillow（python处理图形工具库）cmd输入pip install Pillow
+4，安装以Tesseract（超立方体）命名的开源OCR(Optical Character Recognition, 光学字符识别) 软件，
+	将tessdata目录的上级目录所在路径(默认为tesseract-ocr安装目录)添加至TESSDATA_PREFIX环境变量中
+参考链接：
+http://blog.csdn.net/qiushi_1990/article/details/78041375
+https://www.cnblogs.com/hupeng1234/p/7136442.html
+http://blog.csdn.net/haluoluo211/article/details/53304900
+http://blog.csdn.net/yongshi6/article/details/50773760
+
+代码：
+from PIL import Image
+import pytesseract
+#上面都是导包，只需要下面这一行就能实现图片文字识别
+text=pytesseract.image_to_string(Image.open('denggao.jpeg'),lang='chi_sim')
+print(text)
