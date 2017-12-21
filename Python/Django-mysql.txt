@@ -17,4 +17,18 @@ pip install MySQL-python:error: Microsoft Visual C++ 14.0 is required. Get it wi
 	#link	http://blog.csdn.net/nima1994/article/details/74931621?locationNum=10&fps=1
 	#download twisted #link	https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
 			Twisted是用Python实现的基于事件驱动的网络引擎框架
-	安装wheel,进入.whl所在的文件夹,执行:pip install 带后缀的完整文件名
+	安装twisted,进入.whl所在的文件夹,执行:pip install 带后缀的完整文件名
+......
+	安装完twisted还是安装mysql-python失败.....好吧
+	#link	http://imshusheng.com/python/216.html
+	又发现原来是Python3.x相对于python2.x中的ConfigParser全部改成小写了，说明pip中的mysql-python不支持python3.x呗，可能是pip中更新的比较慢吧，那我们就去下载他们的源码安装，然而他的源码最新更新时间是2012年，依然没有对python3.x支持！
+	于是又找到了一个PyMySQL（https://github.com/PyMySQL/PyMySQL ），当然pip中也有它
+	通过pip install PyMySQL安装成功
+	Django不认PyMySQL,在__init__.py里加上
+	>>>import pymysql
+	>>>pymysql.install_as_MySQLdb()
+	运行python manage.py runserver有提示
+	:You have unapplied migrations; your app may not work properly until they are applied.
+	:Run 'python manage.py migrate' to apply them.
+	当然这个提示并不影响自带服务器的运行
+	python manage.py migrate命令可以消除这个提示
