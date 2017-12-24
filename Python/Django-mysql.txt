@@ -34,3 +34,40 @@ pip install MySQL-python:error: Microsoft Visual C++ 14.0 is required. Get it wi
 	python manage.py migrate命令可以消除这个提示
 	-------------------分割线-----------
 	也可以通过pip install mysqlclient驱动连接mysql...
+>>>>>>>>>>>>>>>
+	重新开始
+	django-admin startproject First		创建新Django项目
+	django-admin startapp FirdataModel	创建APP模型
+	修改项目里setting.py文件：
+		DATABASES = {
+			'default': {
+				'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
+				'NAME': 'firdata',
+				'USER': 'root',
+				'PASSWORD': '',
+				'HOST':'localhost',
+				'PORT':'3306',
+			}
+		}
+		...
+		INSTALLED_APPS = [
+			'django.contrib.admin',
+			'django.contrib.auth',
+			'django.contrib.contenttypes',
+			'django.contrib.sessions',
+			'django.contrib.messages',
+			'django.contrib.staticfiles',
+			'FirdataModel',
+		]
+	修改FirdataModel中mosels.py:
+		# models.py
+		from django.db import models
+		 
+		class Test(models.Model):
+			name = models.CharField(max_length=20)
+	创建数据库firdata
+	执行命令
+		$ python manage.py migrate   # 创建表结构
+		$ python manage.py makemigrations TestModel  # 让 Django 知道我们在我们的模型有一些变更
+		$ python manage.py migrate TestModel   # 创建表结构
+	创建表成功
