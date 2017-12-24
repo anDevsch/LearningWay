@@ -3,9 +3,9 @@
 		创建环境变量
 Django安装	下载 Django 压缩包，解压并和Python安装目录放在同一个根目录，进入 Django 目录，执行python setup.py install，然后开始安装，Django将要被安装到Python的Lib下site-packages。
 	
-创建新项目	django-admin(.exe/.py) startproject HelloWorld
+创建新项目	django-admin(.exe)/django-admin.py startproject HelloWorld
 启动服务器	python manage.py runserver 0.0.0.0:8000
-定义模型	django-admin(.exe/.py) startapp TestModel
+定义模型	django-admin(.exe)/django-admin.py startapp TestModel
 
 	#link	http://www.runoob.com/django/django-first-app.html
 Error:
