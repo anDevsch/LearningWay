@@ -71,3 +71,37 @@ pip install MySQL-python:error: Microsoft Visual C++ 14.0 is required. Get it wi
 		$ python manage.py makemigrations TestModel  # 让 Django 知道我们在我们的模型有一些变更
 		$ python manage.py migrate TestModel   # 创建表结构
 	创建表成功
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	Django返回Json数据
+	1:view.py
+		# -*- coding: utf-8 -*-
+		import json
+		import datetime
+		from django.http import HttpResponse
+		from FirdataModel.models import Article
+		from .JsdateUtil import CJsonEncoder
+		def getArticles(request):
+			list = Article.objects.all()
+			resp = {}
+			resp['status'] = 0
+			datas = []
+			resp['msg'] = ''
+			for var in list:
+				data = {}
+				data['title'] = var.title
+				data['content'] = var.content
+				data['pub_date'] = var.pub_date
+				data['update_time'] = var.update_time
+				datas.append(data)
+			resp['data'] = datas
+			return HttpResponse(json.dumps(resp,indent=4,cls=CJsonEncoder), content_type="application/json")
+	2:JsdateUtil.py
+		import json
+		import datetime
+		class CJsonEncoder(json.JSONEncoder):
+			def default(self, obj):
+				if isinstance(obj, datetime.datetime):
+					return obj.strftime('%Y-%m-%d %H:%M:%S')
+				return json.JSONEncoder.default(self, obj)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		
