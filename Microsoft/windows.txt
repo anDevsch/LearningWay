@@ -4,9 +4,9 @@ windows共享
 	3.文件右键没有(控制面板\系统和安全\管理工具\计算机管理\共享文件夹)
 	4.防火墙(控制面板\系统和安全\Windows 防火墙\允许的应用\更改设置\允许网络共享)
 Sql Server
-	-S 
+	-S 	机器名字\SQL服务名
 		.|(local)|localhost+实例名
 		SQL配置管理器-网络配置-协议-TCP/IP:http://bbs.51cto.com/thread-1078124-1.html###zoom
 			TCP/IP协议打开后 -S .|(local)|localhost
-		修改服务器名称:https://www.cnblogs.com/lenther2002/p/6814071.html
+		
 	
