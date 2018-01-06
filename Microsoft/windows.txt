@@ -1,0 +1,8 @@
+windows共享
+	1.启动共享服务(Computer Browser),详细url:http://blog.csdn.net/xiaocao9903/article/details/45028779
+	2.启动网络发现(控制面板\网络和 Internet\网络和共享中心)
+	3.文件右键没有(控制面板\系统和安全\管理工具\计算机管理\共享文件夹)
+	4.防火墙(控制面板\系统和安全\Windows 防火墙\允许的应用\更改设置\允许网络共享)
+sql -S .或(local)+实例名
+		SQL配置管理器-网络配置-协议-TCP/IP:http://bbs.51cto.com/thread-1078124-1.html###zoom
+	
