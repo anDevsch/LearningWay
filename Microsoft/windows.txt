@@ -5,11 +5,12 @@ windows共享
 	4.防火墙(控制面板\系统和安全\Windows 防火墙\允许的应用\更改设置\允许网络共享)
 Sql Server
 	-S 	机器名字\SQL服务名
-		.|(local)|localhost|127.0.0.1|计算机名称+实例名
+		.|(local)|localhost|Ip|计算机名称+实例名
 		TCP/IP：SQL配置管理器-网络配置-协议-TCP/IP:http://bbs.51cto.com/thread-1078124-1.html###zoom
-			TCP/IP协议打开后 -S .|(local)|localhost|127.0.0.1|计算机名称
+			TCP/IP协议打开后 -S .|(local)|localhost|Ip|计算机名称
 		别名：SQL配置管理器-SQL Native Client 配置-别名-新建别名
 			新建别名后 -S 别名
+	命名管道：安全，速度快：https://www.cnblogs.com/chenxizhang/archive/2009/04/23/1441913.html
 	运行sql文件
 		sqlcmd -S . -U sa -P 123 -d test -i data.sql
 		参数说明：-S 服务器地址 -U 用户名 -P 密码  -d 数据库名称 -i 脚本文件路径 
