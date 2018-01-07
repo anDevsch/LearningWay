@@ -14,4 +14,9 @@ Sql Server
 	运行sql文件
 		sqlcmd -S . -U sa -P 123 -d test -i data.sql
 		参数说明：-S 服务器地址 -U 用户名 -P 密码  -d 数据库名称 -i 脚本文件路径 
-	
+	增加用户名密码
+		http://blog.sina.com.cn/s/blog_b3eabfd30102uyoy.html
+		sp_addlogin 'test','test','DB'  >>登录名、密码、登录的数据库
+		sp_grantdbaccess 'test'  >>将数据库用户加入到当前数据库
+		grant select/update/delete on   TABLEA/VIEWB  to test  >>给该用户赋予查询/更新/删除 表TABLEA的权限或试图VIEWB的权限
+		
