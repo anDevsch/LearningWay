@@ -5,9 +5,9 @@ windows共享
 	4.防火墙(控制面板\系统和安全\Windows 防火墙\允许的应用\更改设置\允许网络共享)
 Sql Server
 	-S 	机器名字\SQL服务名
-		.|(local)|localhost|Ip|计算机名称+实例名
+		空|.|(local)|localhost|Ip|计算机名称+实例名
 		TCP/IP：SQL配置管理器-网络配置-协议-TCP/IP:http://bbs.51cto.com/thread-1078124-1.html###zoom
-			TCP/IP协议打开后 -S .|(local)|localhost|Ip|计算机名称
+			TCP/IP协议打开后 -S 空|.|(local)|localhost|Ip|计算机名称
 		别名：SQL配置管理器-SQL Native Client 配置-别名-新建别名
 			新建别名后 -S 别名
 	命名管道：安全，速度快：https://www.cnblogs.com/chenxizhang/archive/2009/04/23/1441913.html
@@ -16,7 +16,13 @@ Sql Server
 		参数说明：-S 服务器地址 -U 用户名 -P 密码  -d 数据库名称 -i 脚本文件路径 
 	增加用户名密码
 		http://blog.sina.com.cn/s/blog_b3eabfd30102uyoy.html
+		http://blog.csdn.net/sinat_39179993/article/details/74625789
 		sp_addlogin 'test','test','DB'  >>登录名、密码、登录的数据库
 		sp_grantdbaccess 'test'  >>将数据库用户加入到当前数据库
 		grant select/update/delete on   TABLEA/VIEWB  to test  >>给该用户赋予查询/更新/删除 表TABLEA的权限或试图VIEWB的权限
-		
+	删除master用户表：http://bbs.csdn.net/topics/391833354
+		use master;
+		go
+		sp_msforeachtable @command1="drop table ?"
+		go
+	sa登陆失败：http://blog.csdn.net/wang_quan_li/article/details/46285129
