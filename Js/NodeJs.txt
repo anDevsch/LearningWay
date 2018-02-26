@@ -1,0 +1,12 @@
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143450141843488beddae2a1044cab5acb5125baf0882000
+安装Node.js和npm
+
+https://www.jianshu.com/p/5dd18d246281
+nrm切换npm源
+
+https://cloud.tencent.com/developer/article/1006823
+腾讯云：微信小程序：自己部署 Node.js 版本的 Wafer2 Demo
+
+npm install -g pm2
+https://www.douban.com/note/314200231/
+PM2介绍：pm2 是一个带有负载均衡功能的Node应用的进程管理器
